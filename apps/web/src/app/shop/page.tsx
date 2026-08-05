@@ -12,13 +12,14 @@ export default function ShoesView() {
         <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
           {/* Aquí mapearás tus productos reales */}
 
-                    <div className="rounded-lg border p-4">
+          <div className="rounded-lg border p-4">
             <p className="text-sm text-gray-500">Producto de ejemplo</p>
-            
+            <img src="/placeholder.jpg" alt="Producto de ejemplo" className="mx-auto h-48 w-full object-cover" />
           </div>
 
           <div className="rounded-lg border p-4">
             <p className="text-sm text-gray-500">Producto de ejemplo</p>
+            <img src="/placeholder.jpg" alt="Producto de ejemplo" className="mx-auto h-48 w-full object-cover" />
           </div>
         </div>
       </section>
