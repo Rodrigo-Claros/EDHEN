@@ -7,12 +7,16 @@ services:
       - "3000:3000"
     env_file:
       - .env
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true   # necesario en Windows para que detecte cambios
     depends_on:
       - db
     volumes:
       - .:/app
-      - /app/node_modules
+      - /app/node_modules        # evita que Windows pise el node_modules de Linux
     command: npm run dev
+
   db:
     image: postgres:16-alpine
     restart: always
@@ -21,9 +25,9 @@ services:
       POSTGRES_PASSWORD: tienda_pass
       POSTGRES_DB: tienda_db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+
 volumes:
   db_data:
-##Intento 1
